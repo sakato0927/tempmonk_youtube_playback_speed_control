@@ -1,0 +1,29 @@
+// ==UserScript==
+// @name     YouTube Playback Speed Control
+// @version  1
+// @grant    none
+// @match    *://*.youtube.com/*
+// ==/UserScript==
+
+document.addEventListener('keydown', function(event) {
+    var video = document.querySelector('video');  // YouTubeのビデオ要素を取得
+    if (!video) return;  // ビデオ要素がなければ何もしない
+
+    switch (event.key) {
+        case 'a':  // Aキーが押されたとき
+            video.playbackRate = 1.0;  // 再生速度を1倍速に設定
+            break;
+        case 's':  // Sキーが押されたとき
+            video.playbackRate = 1.25;  // 再生速度を1.25倍速に設定
+            break;
+        case 'd':  // Dキーが押されたとき
+            video.playbackRate = 1.5;  // 再生速度を1.5倍速に設定
+            break;
+        case 'e':  // Eキーが押されたとき
+            video.playbackRate = 2.0;  // 再生速度を2倍速に設定
+            break;
+        case 'w':  // Wキーが押されたとき
+            video.playbackRate = 3.0;  // 再生速度を3倍速に設定
+            break;
+    }
+});
